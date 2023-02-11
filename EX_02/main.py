@@ -15,7 +15,7 @@ def treinar_modelo_pt():
     classe_padrao = DefaultTagger("N")
     # Adiquirindo os dados de treino da base
     treino = mac_morpho.tagged_sents()
-    # Gerando a base treinada
+    # Gerando o modelo
     return UnigramTagger(treino, backoff=classe_padrao)
 
 # Função que separa as palavras da frase em tokens
