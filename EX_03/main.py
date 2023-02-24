@@ -1,14 +1,14 @@
 # Importando as libs
-import aux
+import _aux 
 import nltk
 from nltk.corpus import mac_morpho
 from nltk.tag import UnigramTagger
 from nltk.tag import DefaultTagger
 
 # Baixando bases, nessário executar caso seja a primeira vez
-# nltk.download('mac_morpho') # Baixa a base para treinar o modelo de classificação em portuguẽs
-# nltk.download('punkt') # Baixa a base para treinar e executar a tokenização das palavras 
-# nltk.download('averaged_perceptron_tagger') # Baixa o modelo já treinado para classificação de palavras em inglês
+#nltk.download('mac_morpho') # Baixa a base para treinar o modelo de classificação em portuguẽs
+#nltk.download('punkt') # Baixa a base para treinar e executar a tokenização das palavras 
+#nltk.download('averaged_perceptron_tagger') # Baixa o modelo já treinado para classificação de palavras em inglês
 
 def treinar_modelo_pt():
     # Definindo uma classe padrão para tokens não identificados pelo modelo
@@ -40,8 +40,8 @@ def modelo(tokens, lingua):
     return modelo_en(tokens)
 
 frase = input("Digite a frase:\n")
-idioma_frase = aux.get_idioma(frase)
+idioma_frase = _aux.get_idioma(frase)
 tokens = get_tokens(frase)
 
 classificacao_palavras = modelo(tokens, idioma_frase)
-aux.imprimir(classificacao_palavras, idioma_frase)
+_aux.imprimir(classificacao_palavras, idioma_frase)
